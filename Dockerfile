@@ -1,11 +1,11 @@
 FROM python:3.7
 ENV PYTHONUNBUFFERED 1
-RUN apt-get update
-RUN apt-get install python3 -Y
-RUN apt-get install python3-pip -Y
-RUN apt-get install python-pip python-dev nginx git -Y
+RUN yum update
+RUN yum install python3 -y
+RUN yum install python3-pip -y
+RUN yum install python-pip python-dev nginx git -y
 RUN pip3 install virtualenv
-RUN apt-get update
+RUN yum update
 RUN virtualenv myenv
 RUN source myenv/bin/activate
 RUN mkdir /code
